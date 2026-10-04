@@ -1,0 +1,205 @@
+/* ==========================================
+   QuickNotes — Day 2 stylesheet
+   Shared by index.html and about.html
+   ========================================== */
+
+/* 1. Reset + base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f6f8;
+  color: #222831;
+}
+
+/* 2. Header */
+header {
+  background-color: #1e293b;
+  color: #ffffff;
+  text-align: center;
+  padding: 32px 16px;
+}
+
+header h1 {
+  font-size: 2rem;
+}
+
+header p {
+  color: #cbd5e1;
+  margin: 0;
+}
+
+/* 3. Navigation — Flexbox row */
+nav {
+  display: flex;
+  justify-content: center;   /* centred */
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+nav a {
+  color: #ffffff;            /* white text */
+  text-decoration: none;     /* no underline */
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #3b82f6; /* visible hover style */
+}
+
+/* 4. Main — centred, max width; sections as white cards */
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+section {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 8px;
+}
+
+h3 {
+  margin-bottom: 12px;
+}
+
+main p {
+  margin-bottom: 12px;
+}
+
+ol {
+  padding-left: 24px;
+}
+
+/* 5. Features list — responsive CSS Grid cards */
+.features {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.features li {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+/* 6. Keyboard shortcuts table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #cbd5e1;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+
+/* 7. Feedback form — stacked vertically, full width */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+/* 8. Buttons — with transition */
+button {
+  align-self: flex-start;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+/* 9. Footer */
+footer {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  padding: 16px;
+}
+
+/* 10. Small screens */
+@media (max-width: 600px) {
+  header {
+    padding: 20px 12px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  nav {
+    gap: 8px;
+  }
+
+  main {
+    padding: 16px 12px;
+  }
+
+  section {
+    padding: 16px;
+  }
+}
