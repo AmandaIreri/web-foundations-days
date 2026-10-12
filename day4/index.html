@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Pad — Live Counter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <div>
+      <p class="eyebrow">Day 4 · DOM</p>
+      <h1>Note Pad</h1>
+    </div>
+    <button id="theme-toggle" type="button">Dark mode</button>
+  </header>
+
+  <main>
+    <section class="pad">
+      <label for="note-text">Jot something down</label>
+      <textarea id="note-text" rows="8" placeholder="Start typing. Your draft saves itself…"></textarea>
+
+      <div class="meter" aria-hidden="true"><span id="meter-fill"></span></div>
+
+      <div class="stats">
+        <p id="char-count">0 / 200 characters</p>
+        <p id="word-count">0 words</p>
+      </div>
+
+      <div class="actions">
+        <button id="clear-btn" type="button">Clear</button>
+        <p class="hint">Press <kbd>Esc</kbd> in the box to clear</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>Limit: 200 characters. Orange after 180, red past 200.</footer>
+</body>
+</html>

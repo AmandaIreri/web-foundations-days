@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  --bg: #f4efe6;
+  --surface: #fffdf8;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #ddd3c0;
+  --accent: #0b1f3a;
+  --accent-text: #ffffff;
+  --focus: rgba(11, 31, 58, 0.25);
+  --warning: #c2570c;
+  --danger: #c62828;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.04), 0 18px 40px -22px rgba(11, 31, 58, 0.35);
+}
+
+body.dark {
+  --bg: #0d1420;
+  --surface: #151e2e;
+  --text: #e6ebf3;
+  --muted: #8d9ab0;
+  --border: #26324a;
+  --accent: #f2c45a;
+  --accent-text: #0d1420;
+  --focus: rgba(242, 196, 90, 0.3);
+  --warning: #ffa24d;
+  --danger: #ff6b6b;
+  --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Plus Jakarta Sans", system-ui, Arial, sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 40px 16px 8px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+h1 {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 2.6rem;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 16px 16px 32px;
+}
+
+.pad {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: transparent;
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+textarea::placeholder {
+  color: var(--muted);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--focus);
+}
+
+/* Progress meter under the box */
+.meter {
+  height: 4px;
+  margin-top: 12px;
+  border-radius: 999px;
+  background-color: var(--border);
+  overflow: hidden;
+}
+
+#meter-fill {
+  display: block;
+  height: 100%;
+  width: 0;
+  background-color: var(--accent);
+  transition: width 0.15s ease, background-color 0.2s ease;
+}
+
+.meter.warning #meter-fill { background-color: var(--warning); }
+.meter.over #meter-fill { background-color: var(--danger); }
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+#char-count {
+  font-weight: 600;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+#word-count {
+  color: var(--muted);
+}
+
+/* Required state classes for the character counter */
+.warning {
+  color: var(--warning) !important;
+}
+
+.over {
+  color: var(--danger) !important;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+kbd {
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 1px 7px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+#clear-btn {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.875rem;
+  padding: 8px 16px 40px;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 2rem; }
+  .top { padding-top: 24px; }
+  .pad { padding: 18px; }
+}
