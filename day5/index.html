@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="users.js" defer></script>
+</head>
+<body>
+  <header>
+    <p class="eyebrow">Day 5 · fetch()</p>
+    <h1>User Directory</h1>
+    <p>People pulled live from a practice API.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="controls">
+        <button id="load-users" type="button">Load users</button>
+        <div class="field">
+          <label for="filter-input">Filter by name</label>
+          <input id="filter-input" type="text" placeholder="e.g. clementine" autocomplete="off">
+        </div>
+      </div>
+      <p id="status" role="status">Press the button to load the directory.</p>
+      <ul id="users-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data from jsonplaceholder.typicode.com</p>
+  </footer>
+</body>
+</html>
